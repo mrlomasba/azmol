@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZMOL Lubricantes - Distribuidor Exclusivo en [Tu Región]</title>
+    <!-- Carga de Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de color y fuente de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'main-blue': '#0F3460', // Azul Marino Profundo (Primary)
+                        'main-orange': '#FF5A36', // Naranja Vibrante (Accent)
+                        'light-bg': '#F5F7FA', // Gris/Azul Muy Claro para fondos
+                        'dark-text': '#263238', // Gris Oscuro para texto y footer
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Estilos personalizados para la fuente Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Estilo para un efecto de patrón de fondo sutil en secciones clave */
+        .bg-pattern {
+            /* Patrón que usa el nuevo color primario */
+            background-image: radial-gradient(#0F3460 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Efecto de Paralaje Suave para el Hero */
+        .hero-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 85vh; /* Altura mínima para el hero */
+        }
+    </style>
+</head>
+<body class="bg-light-bg font-sans antialiased text-dark-text">
+
+    <!-- CABECERA Y NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-main-blue shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo y Nombre de la Empresa -->
+                <a href="#" class="flex items-center space-x-2">
+                    <!-- Icono usa el color de acento -->
+                    <svg class="w-8 h-8 text-main-orange animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span class="text-xl font-extrabold text-white tracking-wider">AZMOL Lubricantes</span>
+                </a>
+
+                <!-- Navegación de Escritorio -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-white hover:text-main-orange transition duration-300 font-medium">Inicio</a>
+                    <a href="#productos" class="text-white hover:text-main-orange transition duration-300 font-medium">Catálogo</a>
+                    <a href="#marca" class="text-white hover:text-main-orange transition duration-300 font-medium">Marca AZMOL</a>
+                    <a href="#contacto-info" class="text-white hover:text-main-orange transition duration-300 font-medium">Contacto</a>
+                </nav>
+
+                <!-- Botón de Menú Móvil (Hamburguesa) -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-main-blue/95 border-t border-main-orange/50">
+            <nav class="px-2 pt-2 pb-3 space-y-1 flex flex-col">
+                <a href="#inicio" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Inicio</a>
+                <a href="#productos" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Catálogo</a>
+                <a href="#marca" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Marca AZMOL</a>
+                <a href="#contacto-info" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO (Con efecto de Paralaje Simulado) -->
+        <section id="inicio" class="hero-bg bg-main-blue flex items-center" style="background-image: url('fondo.png');">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36 text-center bg-main-blue/70 rounded-xl m-4 backdrop-blur-sm shadow-2xl border-b-4 border-main-orange">
+                <p class="text-main-orange text-base md:text-lg font-bold uppercase tracking-widest mb-3">Distribuidor Exclusivo</p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight text-white">
+                    AZMOL: Ingeniería Británica <br class="hidden sm:inline"> para su Motor
+                </h1>
+                <p class="text-lg sm:text-xl text-light-bg mb-10 max-w-4xl mx-auto font-light">
+                    Suministramos la gama completa de lubricantes premium AZMOL, garantizando máxima eficiencia, durabilidad y protección en los entornos más exigentes.
+                </p>
+                <div class="space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#productos" class="inline-block bg-main-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-main-orange">
+                        Explorar Catálogo
+                    </a>
+                    <a href="#contacto-info" class="inline-block bg-white text-main-blue hover:bg-light-bg font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-white">
+                        Contactar Asesor
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PRODUCTOS DESTACADOS (Cards mejoradas) -->
+        <section id="productos" class="py-20 md:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center text-main-blue mb-4">Nuestra Gama Premium</h2>
+                <p class="text-center text-lg text-dark-text mb-16 max-w-2xl mx-auto">Selección de productos formulados bajo estándares británicos para automoción, industria y flotas pesadas.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Tarjeta de Producto 1: Automotriz -->
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
+                        <div class="text-center">
+                             <!-- Icono usa el color de acento -->
+                             <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            <h3 class="text-2xl font-bold text-main-blue mb-3">Automotriz Sintético</h3>
+                            <p class="text-gray-600 mb-6">Aceites 100% sintéticos para motores modernos de gasolina y diésel. Reducción de fricción y máximo ahorro de combustible.</p>
+                            <a href="#" class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                                Hoja Técnica
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Producto 2: Industrial Heavy Duty -->
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
+                        <div class="text-center">
+                             <!-- Icono usa el color de acento -->
+                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.553 23.553 0 0112 15c-3.048 0-5.943-.714-8.5-2.01l-1-1v7.414a2 2 0 00.586 1.414l.006.006H21.414a2 2 0 001.414-.586V12.255z"></path></svg>
+                            <h3 class="text-2xl font-bold text-main-blue mb-3">Flotas Pesadas y Carga</h3>
+                            <p class="text-gray-600 mb-6">Formulaciones de servicio pesado que protegen bajo cargas extremas. Mayor intervalo de cambio para reducir costos operativos.</p>
+                            <a href="#" class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                                Hoja Técnica
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Producto 3: Grasas Especializadas -->
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
+                        <div class="text-center">
+                             <!-- Icono usa el color de acento -->
+                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <h3 class="text-2xl font-bold text-main-blue mb-3">Grasas de Litio y Complejo</h3>
+                            <p class="text-gray-600 mb-6">Grasas de alta temperatura y presión para rodamientos, chasis y aplicaciones industriales críticas. Resistencia al agua superior.</p>
+                            <a href="#" class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                                Hoja Técnica
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN MARCA AZMOL Y EXCLUSIVIDAD (Diseño Inverso) -->
+        <section id="marca" class="py-20 md:py-28 bg-main-blue text-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <!-- Imagen de la Marca AZMOL -->
+                    <div class="lg:w-1/2 relative">
+                        <!-- Imagen placeholder de un envase de lubricante -->
+                        <img src="fondo2.jpg" alt="Envases de lubricante AZMOL, símbolo de calidad" class="w-full h-auto rounded-xl shadow-2xl object-cover transform rotate-1 transition duration-500 hover:rotate-0" onerror="this.onerror=null; this.src='https://placehold.co/600x400/263238/FF5A36?text=AZMOL+Calidad+Brit%C3%A1nica';">
+                        <!-- Etiqueta usa el color de acento -->
+                        <div class="absolute -bottom-4 -right-4 p-3 bg-main-orange rounded-full text-white font-bold text-sm shadow-xl hidden sm:block">Exclusividad Garantizada</div>
+                    </div>
+
+                    <!-- Contenido de Texto -->
+                    <div class="lg:w-1/2">
+                        <p class="text-main-orange text-sm font-semibold uppercase mb-2 tracking-widest">Su Socio Estratégico</p>
+                        <h2 class="text-4xl font-extrabold mb-6">AZMOL: El Estándar Británico</h2>
+                        <p class="text-light-bg mb-8 leading-relaxed font-light">
+                            Como distribuidores exclusivos, le ofrecemos acceso directo a la tecnología de AZMOL Lubricantes, una marca global con más de 80 años de trayectoria, reconocida por su compromiso con la calidad y la investigación en la industria petroquímica.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Los iconos usan el color de acento -->
+                            <div class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg">
+                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-sm font-medium">Certificaciones Globales</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg">
+                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-sm font-medium">Asesoría Técnica Local</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg">
+                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-sm font-medium">Logística Optimizada</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg">
+                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span class="text-sm font-medium">Stock Local</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN DE CTA FINAL Y CONTACTO SIMPLE -->
+        <section id="contacto-info" class="py-16 md:py-20 bg-light-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-3xl font-extrabold text-main-blue mb-4">¿Listo para Optimizar su Operación?</h3>
+                <p class="text-lg text-dark-text mb-8">Póngase en contacto con nuestro equipo de ventas y descubra cómo AZMOL puede mejorar el rendimiento y la vida útil de sus equipos.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                    <!-- Email -->
+                    <div class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+                        <p class="text-main-orange font-bold">EMAIL</p>
+                        <a href="mailto:ventas@sucomercializadora.com" class="text-main-blue font-semibold hover:underline">ventas@sucomercializadora.com</a>
+                    </div>
+                    <!-- Teléfono -->
+                    <div class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+                        <p class="text-main-orange font-bold">TELÉFONO</p>
+                        <a href="tel:+525512345678" class="text-main-blue font-semibold hover:underline">+52 (55) 1234 5678</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-text text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-main-orange/50 pb-8 mb-8">
+                <!-- Columna 1: Logo y Slogan -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-3">
+                         <svg class="w-8 h-8 text-main-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span class="text-xl font-extrabold text-white tracking-wider">AZMOL Lubricantes</span>
+                    </div>
+                    <p class="text-sm text-gray-400 mt-2">Tecnología británica, soporte local.</p>
+                </div>
+
+                <!-- Columna 2: Navegación Rápida -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-main-orange">Enlaces</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-sm text-gray-300 hover:text-main-orange transition duration-300">Inicio</a></li>
+                        <li><a href="#productos" class="text-sm text-gray-300 hover:text-main-orange transition duration-300">Catálogo</a></li>
+                        <li><a href="#marca" class="text-sm text-gray-300 hover:text-main-orange transition duration-300">AZMOL</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Columna 3: Información de Contacto -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-main-orange">Contacto</h4>
+                    <p class="text-sm text-gray-300">ventas@sucomercializadora.com</p>
+                    <p class="text-sm text-gray-300">+52 (55) 1234 5678</p>
+                    <div class="flex space-x-3 mt-4">
+                        <!-- Redes Sociales (Simuladas) -->
+                        <a href="#" class="text-gray-400 hover:text-main-orange transition duration-300"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.247V12h2.247V9.929c0-2.21 1.353-3.232 3.235-3.232 1.002 0 1.862.074 2.115.107v2.443h-1.465c-1.153 0-1.488.55-1.488 1.464V12h2.956l-.47 2.891h-2.486v6.987C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-xs text-gray-500 pt-8">
+                &copy; <span id="current-year"></span> AZMOL Lubricantes Distribución. Todos los derechos reservados.
+                <br>
+                <br>
+                Desarrollador Web: Ing. Edgar Lomas. 
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp (SOLO IMAGEN) -->
+    <a href="https://wa.me/525512345678?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%C3%A1%20m%C3%A1s%20informaci%C3%B3n." 
+       class="fixed bottom-6 right-6 z-50 transition duration-300 transform hover:scale-110" 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp">
+        
+        <!-- ESPACIO PARA AGREGAR LA IMAGEN DEL ICONO DE WHATSAPP -->
+        <!-- NOTA: Reemplace 'URL_DE_TU_IMAGEN_DE_WHATSAPP' con la URL de su imagen. -->
+        <!-- La imagen ahora lleva las clases de tamaño, redondez y sombra para que solo el círculo de la imagen sea visible. -->
+        <img src="whatsapp-icon.png" 
+             alt="WhatsApp Icono de Contacto"
+             class="w-12 h-12 rounded-full object-cover shadow-xl">
+    </a>
+
+    <!-- JavaScript para interactividad -->
+    <script>
+        // Obtener el año actual para el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 1. Manejo del Menú Móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Ocultar el menú móvil al hacer clic en un enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Simulación de interacción de botones (opcional, para feedback visual)
+        document.querySelectorAll('a[href="#contacto-info"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Navegación suave
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
