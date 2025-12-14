@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZMOL Lubricantes - Distribuidor Exclusivo en [Tu Región]</title>
+    <title>AZMOL Lubricantes - Distribuidor Exclusivo</title>
+    <link rel="Icon" href="logo.ico">
     <!-- Carga de Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuración de color y fuente de Tailwind -->
@@ -28,6 +29,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+        /* Se elimina la definición de la animación backgroundPanV */
+
         /* Estilo para un efecto de patrón de fondo sutil en secciones clave */
         .bg-pattern {
             /* Patrón que usa el nuevo color primario */
@@ -37,11 +40,13 @@
 
         /* Efecto de Paralaje Suave para el Hero */
         .hero-bg {
-            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: cover; /* Asegura que la imagen cubra todo el espacio, adaptándose al tamaño */
             min-height: 85vh; /* Altura mínima para el hero */
+            
+            /* Se ha quitado la animación y se agregó background-attachment: fixed; */
+            background-attachment: fixed; /* Mantiene la imagen fija mientras el contenido se desplaza */
         }
     </style>
 </head>
@@ -99,7 +104,8 @@
                     <a href="#productos" class="inline-block bg-main-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-main-orange">
                         Explorar Catálogo
                     </a>
-                    <a href="#contacto-info" class="inline-block bg-white text-main-blue hover:bg-light-bg font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-white">
+                    <!-- Modificado: el botón 'Contactar Asesor' ahora tiene el enlace telefónico directo -->
+                    <a href="tel:8181366936" class="inline-block bg-white text-main-blue hover:bg-light-bg font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-white">
                         Contactar Asesor
                     </a>
                 </div>
@@ -208,12 +214,12 @@
                     <!-- Email -->
                     <div class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
                         <p class="text-main-orange font-bold">EMAIL</p>
-                        <a href="mailto:ventas@sucomercializadora.com" class="text-main-blue font-semibold hover:underline">ventas@sucomercializadora.com</a>
+                        <a href="mailto:aflores@indulas.com.mx" class="text-main-blue font-semibold hover:underline">aflores@indulas.com.mx</a>
                     </div>
                     <!-- Teléfono -->
                     <div class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
                         <p class="text-main-orange font-bold">TELÉFONO</p>
-                        <a href="tel:+525512345678" class="text-main-blue font-semibold hover:underline">+52 (55) 1234 5678</a>
+                        <a href="tel:8181366936" class="text-main-blue font-semibold hover:underline">81 8136 6936</a>
                     </div>
                 </div>
             </div>
@@ -247,11 +253,26 @@
                 <!-- Columna 3: Información de Contacto -->
                 <div>
                     <h4 class="text-lg font-bold mb-4 text-main-orange">Contacto</h4>
-                    <p class="text-sm text-gray-300">ventas@sucomercializadora.com</p>
-                    <p class="text-sm text-gray-300">+52 (55) 1234 5678</p>
+                    <p class="text-sm text-gray-300">aflores@indulas.com.mx</p>
+                    <p class="text-sm text-gray-300"><a href="tel:8181366936" class="hover:underline">81 8136 6936</a></p>
                     <div class="flex space-x-3 mt-4">
-                        <!-- Redes Sociales (Simuladas) -->
-                        <a href="#" class="text-gray-400 hover:text-main-orange transition duration-300"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.247V12h2.247V9.929c0-2.21 1.353-3.232 3.235-3.232 1.002 0 1.862.074 2.115.107v2.443h-1.465c-1.153 0-1.488.55-1.488 1.464V12h2.956l-.47 2.891h-2.486v6.987C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+                        <!-- Redes Sociales (Facebook, Instagram, X/Twitter, TikTok) -->
+                        <a href="#" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <!-- Icono de Facebook (Simulado) -->
+                            <img src="facebook.png" alt="Icono de Facebook" class="w-5 h-5 rounded-sm"/>
+                        </a>
+                        <a href="#" target="_blank" aria-label="Instagram" class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <!-- Icono de Instagram (Simulado) -->
+                            <img src="instagram.png" alt="Icono de Instagram" class="w-5 h-5 rounded-sm"/>
+                        </a>
+                        <a href="#" target="_blank" aria-label="X (Twitter)" class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <!-- Icono de X (Twitter) (Simulado) -->
+                            <img src="twitter.png" alt="Icono de X (Twitter)" class="w-5 h-5 rounded-sm"/>
+                        </a>
+                        <a href="#" target="_blank" aria-label="TikTok" class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <!-- Icono de TikTok (Simulado) -->
+                            <img src="tiktok.png" alt="Icono de TikTok" class="w-5 h-5 rounded-sm"/>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -259,20 +280,20 @@
                 &copy; <span id="current-year"></span> AZMOL Lubricantes Distribución. Todos los derechos reservados.
                 <br>
                 <br>
-                Desarrollador Web: Ing. Edgar Lomas. 
+                Desarrollador Web: Ing. Edgar Lomas
+                <br>
+                Contacto: edgarlms131@gmail.com
             </div>
         </div>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp (SOLO IMAGEN) -->
-    <a href="https://wa.me/525512345678?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%C3%A1%20m%C3%A1s%20informaci%C3%B3n." 
+    <!-- Botón Flotante de WhatsApp (CON IMAGEN AGREGADA) -->
+    <a href="https://wa.me/528181366936?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%C3%A1%20m%C3%A1s%20informaci%C3%B3n." 
        class="fixed bottom-6 right-6 z-50 transition duration-300 transform hover:scale-110" 
        target="_blank" 
        aria-label="Contactar por WhatsApp">
         
-        <!-- ESPACIO PARA AGREGAR LA IMAGEN DEL ICONO DE WHATSAPP -->
-        <!-- NOTA: Reemplace 'URL_DE_TU_IMAGEN_DE_WHATSAPP' con la URL de su imagen. -->
-        <!-- La imagen ahora lleva las clases de tamaño, redondez y sombra para que solo el círculo de la imagen sea visible. -->
+        <!-- Icono de WhatsApp (Simulado) -->
         <img src="whatsapp-icon.png" 
              alt="WhatsApp Icono de Contacto"
              class="w-12 h-12 rounded-full object-cover shadow-xl">
