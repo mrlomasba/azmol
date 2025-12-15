@@ -17,6 +17,7 @@
                         'main-orange': '#FF5A36', // Naranja Vibrante (Accent)
                         'light-bg': '#F5F7FA', // Gris/Azul Muy Claro para fondos
                         'dark-text': '#263238', // Gris Oscuro para texto y footer
+                        'whatsapp': '#25D366', // Color oficial de WhatsApp
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -257,7 +258,7 @@
                     <p class="text-sm text-gray-300"><a href="tel:8181366936" class="hover:underline">81 8136 6936</a></p>
                     <div class="flex space-x-3 mt-4">
                         <!-- Redes Sociales (Facebook, Instagram, X/Twitter, TikTok) -->
-                        <a href="#" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-main-orange transition duration-300">
+                        <a href="https://www.facebook.com/AZMOLGLOBAL" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-main-orange transition duration-300">
                             <!-- Icono de Facebook (Simulado) -->
                             <img src="facebook.png" alt="Icono de Facebook" class="w-5 h-5 rounded-sm"/>
                         </a>
@@ -287,16 +288,16 @@
         </div>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp (CON IMAGEN AGREGADA) -->
-    <a href="https://wa.me/528181366936?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%C3%A1%20m%C3%A1s%20informaci%C3%B3n." 
-       class="fixed bottom-6 right-6 z-50 transition duration-300 transform hover:scale-110" 
-       target="_blank" 
-       aria-label="Contactar por WhatsApp">
-        
-        <!-- Icono de WhatsApp (Simulado) -->
+    <!-- Botón Flotante de WhatsApp -->
+     <a href="https://wa.me/528181366936?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="fixed bottom-6 right-6 p-4 rounded-full bg-whatsapp text-white shadow-xl hover:bg-green-600 transition duration-300 z-[9999] focus:outline-none focus:ring-4 focus:ring-whatsapp focus:ring-opacity-50"
+        aria-label="Contactar por WhatsApp">
         <img src="whatsapp-icon.png" 
-             alt="WhatsApp Icono de Contacto"
-             class="w-12 h-12 rounded-full object-cover shadow-xl">
+            alt="Icono de WhatsApp" 
+            onerror="this.onerror=null;this.src='https://placehold.co/28x28/ffffff/25D366?text=WA';"
+            class="w-7 h-7 object-contain">
     </a>
 
     <!-- JavaScript para interactividad -->
