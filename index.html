@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,9 +41,9 @@
         .hero-bg {
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover; 
-            min-height: 85vh; 
-            background-attachment: fixed; 
+            background-size: cover;
+            min-height: 85vh;
+            background-attachment: fixed;
         }
 
         /* Enfoque para inputs */
@@ -53,7 +54,22 @@
         }
     </style>
 </head>
-<body class="bg-light-bg font-sans antialiased text-dark-text">
+
+<body class="bg-light-bg font-sans antialiased text-dark-text overflow-hidden">
+
+    <!-- LOADER DE CARGA -->
+    <div id="page-loader"
+        class="fixed inset-0 z-[100000] bg-main-blue flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
+        <div class="relative flex justify-center items-center w-44 h-44">
+            <!-- Anillos giratorios de carga -->
+            <div class="absolute inset-0 rounded-full border-4 border-white/10 border-t-main-orange shadow-[0_0_15px_rgba(255,90,54,0.3)] animate-spin"></div>
+            <div class="absolute inset-3 rounded-full border-4 border-white/5 border-b-main-orange animate-[spin_1.5s_linear_infinite_reverse]"></div>
+            
+            <!-- Imagen del Logo de AZMOL -->
+            <img src="loader.png" alt="AZMOL Logo" class="w-28 h-28 object-contain animate-pulse drop-shadow-2xl relative z-10">
+        </div>
+        <span class="text-white text-lg font-bold tracking-[0.2em] mt-6 animate-pulse">CARGANDO</span>
+    </div>
 
     <!-- CABECERA Y NAVEGACIÓN -->
     <header class="sticky top-0 z-50 bg-main-blue shadow-2xl">
@@ -61,22 +77,36 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo y Nombre de la Empresa -->
                 <a href="#" class="flex items-center space-x-2">
-                    <svg class="w-8 h-8 text-main-orange animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <svg class="w-8 h-8 text-main-orange animate-pulse" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
                     <span class="text-xl font-extrabold text-white tracking-wider">AZMOL Lubricantes</span>
                 </a>
 
                 <!-- Navegación de Escritorio -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-white hover:text-main-orange transition duration-300 font-medium">Inicio</a>
-                    <a href="#productos" class="text-white hover:text-main-orange transition duration-300 font-medium">Catálogo</a>
-                    <a href="#marca" class="text-white hover:text-main-orange transition duration-300 font-medium">Marca AZMOL</a>
-                    <a href="#contacto" class="text-white hover:text-main-orange transition duration-300 font-medium">Cotizar</a>
-                    <a href="#contacto-info" class="text-white hover:text-main-orange transition duration-300 font-medium">Contacto</a>
+                    <a href="#inicio"
+                        class="text-white hover:text-main-orange transition duration-300 font-medium">Inicio</a>
+                    <a href="#productos"
+                        class="text-white hover:text-main-orange transition duration-300 font-medium">Catálogo</a>
+                    <a href="#marca" class="text-white hover:text-main-orange transition duration-300 font-medium">Marca
+                        AZMOL</a>
+                    <a href="#contacto"
+                        class="text-white hover:text-main-orange transition duration-300 font-medium">Cotizar</a>
+                    <a href="#contacto-info"
+                        class="text-white hover:text-main-orange transition duration-300 font-medium">Contacto</a>
                 </nav>
 
                 <!-- Botón de Menú Móvil (Hamburguesa) -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <button id="mobile-menu-button"
+                    class="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -84,11 +114,17 @@
         <!-- Menú Móvil (Oculto por defecto) -->
         <div id="mobile-menu" class="hidden md:hidden bg-main-blue/95 border-t border-main-orange/50">
             <nav class="px-2 pt-2 pb-3 space-y-1 flex flex-col">
-                <a href="#inicio" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Inicio</a>
-                <a href="#productos" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Catálogo</a>
-                <a href="#marca" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Marca AZMOL</a>
-                <a href="#contacto" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Cotizar</a>
-                <a href="#contacto-info" class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contacto</a>
+                <a href="#inicio"
+                    class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Inicio</a>
+                <a href="#productos"
+                    class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Catálogo</a>
+                <a href="#marca"
+                    class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Marca
+                    AZMOL</a>
+                <a href="#contacto"
+                    class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Cotizar</a>
+                <a href="#contacto-info"
+                    class="text-white hover:bg-main-orange/20 block px-3 py-2 rounded-md text-base font-medium transition duration-300">Contacto</a>
             </nav>
         </div>
     </header>
@@ -96,19 +132,24 @@
     <main>
         <!-- SECCIÓN HERO -->
         <section id="inicio" class="hero-bg bg-main-blue flex items-center" style="background-image: url('fondo.png');">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36 text-center bg-main-blue/70 rounded-xl m-4 backdrop-blur-sm shadow-2xl border-b-4 border-main-orange">
-                <p class="text-main-orange text-base md:text-lg font-bold uppercase tracking-widest mb-3">Distribuidor Exclusivo</p>
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 md:py-36 text-center bg-main-blue/70 rounded-xl m-4 backdrop-blur-sm shadow-2xl border-b-4 border-main-orange">
+                <p class="text-main-orange text-base md:text-lg font-bold uppercase tracking-widest mb-3">Distribuidor
+                    Exclusivo</p>
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight text-white">
                     AZMOL: Ingeniería Británica <br class="hidden sm:inline"> para su Motor
                 </h1>
                 <p class="text-lg sm:text-xl text-light-bg mb-10 max-w-4xl mx-auto font-light">
-                    Suministramos la gama completa de lubricantes premium AZMOL, garantizando máxima eficiencia, durabilidad y protección en los entornos más exigentes.
+                    Suministramos la gama completa de lubricantes premium AZMOL, garantizando máxima eficiencia,
+                    durabilidad y protección en los entornos más exigentes.
                 </p>
                 <div class="space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#productos" class="inline-block bg-main-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-main-orange">
+                    <a href="#productos"
+                        class="inline-block bg-main-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-main-orange">
                         Explorar Catálogo
                     </a>
-                    <a href="tel:8181366936" class="inline-block bg-white text-main-blue hover:bg-light-bg font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-white">
+                    <a href="tel:8181366936"
+                        class="inline-block bg-white text-main-blue hover:bg-light-bg font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 border-2 border-white">
                         Contactar Asesor
                     </a>
                 </div>
@@ -119,40 +160,63 @@
         <section id="productos" class="py-20 md:py-28 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl font-extrabold text-center text-main-blue mb-4">Nuestra Gama Premium</h2>
-                <p class="text-center text-lg text-dark-text mb-16 max-w-2xl mx-auto">Selección de productos formulados bajo estándares británicos para automoción, industria y flotas pesadas.</p>
+                <p class="text-center text-lg text-dark-text mb-16 max-w-2xl mx-auto">Selección de productos formulados
+                    bajo estándares británicos para automoción, industria y flotas pesadas.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <!-- Tarjeta de Producto 1: Automotriz -->
-                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
+                    <div
+                        class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
                         <div class="text-center">
-                             <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
                             <h3 class="text-2xl font-bold text-main-blue mb-3">Automotriz Sintético</h3>
-                            <p class="text-gray-600 mb-6">Aceites 100% sintéticos para motores modernos de gasolina y diésel. Reducción de fricción y máximo ahorro de combustible.</p>
-                            <a href="#" class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                            <p class="text-gray-600 mb-6">Aceites 100% sintéticos para motores modernos de gasolina y
+                                diésel. Reducción de fricción y máximo ahorro de combustible.</p>
+                            <a href="#"
+                                class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
                                 Hoja Técnica
                             </a>
                         </div>
                     </div>
 
                     <!-- Tarjeta de Producto 2: Flotas Pesadas -->
-                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
+                    <div
+                        class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
                         <div class="text-center">
-                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.553 23.553 0 0112 15c-3.048 0-5.943-.714-8.5-2.01l-1-1v7.414a2 2 0 00.586 1.414l.006.006H21.414a2 2 0 001.414-.586V12.255z"></path></svg>
+                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 13.255A23.553 23.553 0 0112 15c-3.048 0-5.943-.714-8.5-2.01l-1-1v7.414a2 2 0 00.586 1.414l.006.006H21.414a2 2 0 001.414-.586V12.255z">
+                                </path>
+                            </svg>
                             <h3 class="text-2xl font-bold text-main-blue mb-3">Flotas Pesadas y Carga</h3>
-                            <p class="text-gray-600 mb-6">Formulaciones de servicio pesado que protegen bajo cargas extremas. Mayor intervalo de cambio para reducir costos operativos.</p>
-                            <a href="#" class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                            <p class="text-gray-600 mb-6">Formulaciones de servicio pesado que protegen bajo cargas
+                                extremas. Mayor intervalo de cambio para reducir costos operativos.</p>
+                            <a href="#"
+                                class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
                                 Hoja Técnica
                             </a>
                         </div>
                     </div>
 
                     <!-- Tarjeta de Producto 3: Grasas -->
-                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
+                    <div
+                        class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-main-orange transform hover:-translate-y-1 transition duration-500 overflow-hidden">
                         <div class="text-center">
-                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <svg class="w-16 h-16 text-main-orange mx-auto mb-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
                             <h3 class="text-2xl font-bold text-main-blue mb-3">Grasas de Litio y Complejo</h3>
-                            <p class="text-gray-600 mb-6">Grasas de alta temperatura y presión para rodamientos, chasis y aplicaciones industriales críticas. Resistencia al agua superior.</p>
-                            <a href="#" class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                            <p class="text-gray-600 mb-6">Grasas de alta temperatura y presión para rodamientos, chasis
+                                y aplicaciones industriales críticas. Resistencia al agua superior.</p>
+                            <a href="#"
+                                class="inline-block bg-main-blue hover:bg-main-orange text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
                                 Hoja Técnica
                             </a>
                         </div>
@@ -166,23 +230,40 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="lg:w-1/2 relative">
-                        <img src="fondo2.jpg" alt="Envases de lubricante AZMOL" class="w-full h-auto rounded-xl shadow-2xl object-cover transform rotate-1 transition duration-500 hover:rotate-0" onerror="this.onerror=null; this.src='https://placehold.co/600x400/263238/FF5A36?text=AZMOL+Calidad+Brit%C3%A1nica';">
-                        <div class="absolute -bottom-4 -right-4 p-3 bg-main-orange rounded-full text-white font-bold text-sm shadow-xl hidden sm:block">Exclusividad Garantizada</div>
+                        <img src="fondo2.jpg" alt="Envases de lubricante AZMOL"
+                            class="w-full h-auto rounded-xl shadow-2xl object-cover transform rotate-1 transition duration-500 hover:rotate-0"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x400/263238/FF5A36?text=AZMOL+Calidad+Brit%C3%A1nica';">
+                        <div
+                            class="absolute -bottom-4 -right-4 p-3 bg-main-orange rounded-full text-white font-bold text-sm shadow-xl hidden sm:block">
+                            Exclusividad Garantizada</div>
                     </div>
 
                     <div class="lg:w-1/2">
-                        <p class="text-main-orange text-sm font-semibold uppercase mb-2 tracking-widest">Su Socio Estratégico</p>
+                        <p class="text-main-orange text-sm font-semibold uppercase mb-2 tracking-widest">Su Socio
+                            Estratégico</p>
                         <h2 class="text-4xl font-extrabold mb-6">AZMOL: El Estándar Británico</h2>
                         <p class="text-light-bg mb-8 leading-relaxed font-light">
-                            Como distribuidores exclusivos, le ofrecemos acceso directo a la tecnología de AZMOL Lubricantes, una marca global con más de 80 años de trayectoria, reconocida por su compromiso con la calidad y la investigación en la industria petroquímica.
+                            Como distribuidores exclusivos, le ofrecemos acceso directo a la tecnología de AZMOL
+                            Lubricantes, una marca global con más de 80 años de trayectoria, reconocida por su
+                            compromiso con la calidad y la investigación en la industria petroquímica.
                         </p>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg">
-                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
                                 <span class="text-sm font-medium">Certificaciones Globales</span>
                             </div>
                             <div class="flex items-center space-x-3 bg-white/10 p-4 rounded-lg">
-                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <svg class="w-6 h-6 text-main-orange flex-shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
                                 <span class="text-sm font-medium">Asesoría Técnica Local</span>
                             </div>
                         </div>
@@ -197,22 +278,25 @@
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
                     <div class="bg-main-blue p-8 text-center">
                         <h2 class="text-3xl font-bold text-white mb-2">Solicitar Cotización</h2>
-                        <p class="text-main-orange font-medium">Envíenos sus datos y un asesor le contactará vía WhatsApp</p>
+                        <p class="text-main-orange font-medium">Envíenos sus datos y un asesor le contactará vía
+                            WhatsApp</p>
                     </div>
-                    
+
                     <form id="whatsapp-form" class="p-8 space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <!-- Nombre Completo -->
                             <div>
-                                <label for="name" class="block text-sm font-bold text-main-blue mb-2">Nombre Completo *</label>
-                                <input type="text" id="name" required 
+                                <label for="name" class="block text-sm font-bold text-main-blue mb-2">Nombre Completo
+                                    *</label>
+                                <input type="text" id="name" required
                                     class="w-full px-4 py-3 rounded-xl border border-gray-300 form-input transition duration-200"
                                     placeholder="Ej. Juan Pérez">
                             </div>
                             <!-- Teléfono -->
                             <div>
-                                <label for="phone" class="block text-sm font-bold text-main-blue mb-2">Teléfono de Contacto *</label>
-                                <input type="tel" id="phone" required 
+                                <label for="phone" class="block text-sm font-bold text-main-blue mb-2">Teléfono de
+                                    Contacto *</label>
+                                <input type="tel" id="phone" required
                                     class="w-full px-4 py-3 rounded-xl border border-gray-300 form-input transition duration-200"
                                     placeholder="Ej. 8181234567">
                             </div>
@@ -220,44 +304,52 @@
 
                         <!-- Correo Electrónico -->
                         <div>
-                            <label for="email" class="block text-sm font-bold text-main-blue mb-2">Correo Electrónico *</label>
-                            <input type="email" id="email" required 
+                            <label for="email" class="block text-sm font-bold text-main-blue mb-2">Correo Electrónico
+                                *</label>
+                            <input type="email" id="email" required
                                 class="w-full px-4 py-3 rounded-xl border border-gray-300 form-input transition duration-200"
                                 placeholder="usuario@empresa.com">
                         </div>
 
                         <!-- Mensaje -->
                         <div>
-                            <label for="message" class="block text-sm font-bold text-main-blue mb-2">Mensaje o Consulta *</label>
-                            <textarea id="message" rows="4" required 
+                            <label for="message" class="block text-sm font-bold text-main-blue mb-2">Mensaje o Consulta
+                                *</label>
+                            <textarea id="message" rows="4" required
                                 class="w-full px-4 py-3 rounded-xl border border-gray-300 form-input transition duration-200"
                                 placeholder="Cuéntenos qué producto necesita o el tipo de maquinaria que opera..."></textarea>
                         </div>
 
                         <!-- Botón de Envío -->
-                        <button type="submit" 
+                        <button type="submit"
                             class="w-full bg-main-orange hover:bg-orange-600 text-white font-extrabold py-4 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] flex items-center justify-center space-x-3">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" class="w-6 h-6 filter brightness-0 invert">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"
+                                class="w-6 h-6 filter brightness-0 invert">
                             <span>ENVIAR A WHATSAPP</span>
                         </button>
-                        <p class="text-center text-xs text-gray-400">Al hacer clic, se abrirá WhatsApp con su mensaje pre-llenado.</p>
+                        <p class="text-center text-xs text-gray-400">Al hacer clic, se abrirá WhatsApp con su mensaje
+                            pre-llenado.</p>
                     </form>
                 </div>
             </div>
         </section>
-        
+
         <!-- SECCIÓN DE CTA FINAL -->
         <section id="contacto-info" class="py-16 md:py-20 bg-light-bg">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h3 class="text-3xl font-extrabold text-main-blue mb-4">¿Listo para Optimizar su Operación?</h3>
-                <p class="text-lg text-dark-text mb-8">Póngase en contacto con nuestro equipo de ventas y descubra cómo AZMOL puede mejorar el rendimiento y la vida útil de sus equipos.</p>
+                <p class="text-lg text-dark-text mb-8">Póngase en contacto con nuestro equipo de ventas y descubra cómo
+                    AZMOL puede mejorar el rendimiento y la vida útil de sus equipos.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                    <div class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+                    <div
+                        class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
                         <p class="text-main-orange font-bold">EMAIL</p>
-                        <a href="mailto:aflores@indulas.com.mx" class="text-main-blue font-semibold hover:underline">aflores@indulas.com.mx</a>
+                        <a href="mailto:aflores@indulas.com.mx"
+                            class="text-main-blue font-semibold hover:underline">aflores@indulas.com.mx</a>
                     </div>
-                    <div class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+                    <div
+                        class="p-4 bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
                         <p class="text-main-orange font-bold">TELÉFONO</p>
                         <a href="tel:8181366936" class="text-main-blue font-semibold hover:underline">81 8136 6936</a>
                     </div>
@@ -272,7 +364,11 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-main-orange/50 pb-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-2 mb-3">
-                         <svg class="w-8 h-8 text-main-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <svg class="w-8 h-8 text-main-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                         <span class="text-xl font-extrabold text-white tracking-wider">AZMOL Lubricantes</span>
                     </div>
                     <p class="text-sm text-gray-400 mt-2">Tecnología británica, soporte local.</p>
@@ -281,28 +377,43 @@
                 <div>
                     <h4 class="text-lg font-bold mb-4 text-main-orange">Enlaces</h4>
                     <ul class="space-y-2">
-                        <li><a href="#inicio" class="text-sm text-gray-300 hover:text-main-orange transition duration-300">Inicio</a></li>
-                        <li><a href="#productos" class="text-sm text-gray-300 hover:text-main-orange transition duration-300">Catálogo</a></li>
-                        <li><a href="#marca" class="text-sm text-gray-300 hover:text-main-orange transition duration-300">AZMOL</a></li>
+                        <li><a href="#inicio"
+                                class="text-sm text-gray-300 hover:text-main-orange transition duration-300">Inicio</a>
+                        </li>
+                        <li><a href="#productos"
+                                class="text-sm text-gray-300 hover:text-main-orange transition duration-300">Catálogo</a>
+                        </li>
+                        <li><a href="#marca"
+                                class="text-sm text-gray-300 hover:text-main-orange transition duration-300">AZMOL</a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="text-lg font-bold mb-4 text-main-orange">Contacto</h4>
                     <p class="text-sm text-gray-300">aflores@indulas.com.mx</p>
-                    <p class="text-sm text-gray-300"><a href="tel:8181366936" class="hover:underline">81 8136 6936</a></p>
+                    <p class="text-sm text-gray-300"><a href="tel:8181366936" class="hover:underline">81 8136 6936</a>
+                    </p>
                     <div class="flex space-x-3 mt-4">
-                        <a href="https://www.facebook.com/AZMOLGLOBAL" target="_blank" class="text-gray-400 hover:text-main-orange transition duration-300">
-                            <img src="facebook.png" alt="FB" class="w-5 h-5 rounded-sm" onerror="this.src='https://cdn-icons-png.flaticon.com/512/733/733547.png'"/>
+                        <a href="https://www.facebook.com/AZMOLGLOBAL" target="_blank"
+                            class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <img src="facebook.png" alt="FB" class="w-5 h-5 rounded-sm"
+                                onerror="this.src='https://cdn-icons-png.flaticon.com/512/733/733547.png'" />
                         </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-main-orange transition duration-300">
-                            <img src="instagram.png" alt="IG" class="w-5 h-5 rounded-sm" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png'"/>
+                        <a href="#" target="_blank"
+                            class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <img src="instagram.png" alt="IG" class="w-5 h-5 rounded-sm"
+                                onerror="this.src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png'" />
                         </a>
-                        <a href="https://www.tiktok.com/@tu_usuario" target="_blank" class="text-gray-400 hover:text-main-orange transition duration-300">
-                             <img src="tiktok.png" alt="TikTok" class="w-5 h-5 rounded-sm" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3046/3046121.png'"/>
+                        <a href="https://www.tiktok.com/@tu_usuario" target="_blank"
+                            class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <img src="tiktok.png" alt="TikTok" class="w-5 h-5 rounded-sm"
+                                onerror="this.src='https://cdn-icons-png.flaticon.com/512/3046/3046121.png'" />
                         </a>
-                        <a href="https://twitter.com/tu_usuario" target="_blank" class="text-gray-400 hover:text-main-orange transition duration-300">
-                            <img src="twitter.png" alt="X" class="w-5 h-5 rounded-sm" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968830.png'"/>
+                        <a href="https://twitter.com/tu_usuario" target="_blank"
+                            class="text-gray-400 hover:text-main-orange transition duration-300">
+                            <img src="twitter.png" alt="X" class="w-5 h-5 rounded-sm"
+                                onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968830.png'" />
                         </a>
                     </div>
                 </div>
@@ -316,18 +427,29 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-<a href="https://wa.me/528181366936?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
-        target="_blank"
-        rel="noopener noreferrer"
+    <a href="https://wa.me/528181366936?text=Hola%2C%20estoy%20interesado%20en%20los%20lubricantes%20AZMOL%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+        target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 p-4 rounded-full bg-whatsapp text-white shadow-xl hover:bg-green-600 transition duration-300 z-[9999] focus:outline-none focus:ring-4 focus:ring-whatsapp focus:ring-opacity-50"
         aria-label="Contactar por WhatsApp">
-        <img src="whatsapp-icon.png"
-             alt="Icono de WhatsApp"
+        <img src="whatsapp-icon.png" alt="Icono de WhatsApp"
             onerror="this.onerror=null;this.src='https://placehold.co/28x28/ffffff/25D366?text=WA';"
             class="w-7 h-7 object-contain">
-  </a>
+    </a>
     <!-- JavaScript para interactividad y Formulario -->
     <script>
+        // Ocultar Loader al cargar la página
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            // Un pequeño retraso para asegurar que la animación sea visible y suave
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                document.body.classList.remove('overflow-hidden'); // Permitir scroll
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700); // Mismo tiempo que la duración de la transición en CSS
+            }, 600);
+        });
+
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // 1. Manejo del Menú Móvil
@@ -347,29 +469,29 @@
 
         // 2. Lógica del Formulario de WhatsApp
         const whatsappForm = document.getElementById('whatsapp-form');
-        
-        whatsappForm.addEventListener('submit', function(e) {
+
+        whatsappForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Obtener valores
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
+
             // Número de destino (528181366936)
             const targetNumber = "528181366936";
-            
+
             // Construir mensaje estructurado
             const text = `*NUEVA SOLICITUD DE COTIZACIÓN - AZMOL*\n\n` +
-                         `*Nombre:* ${name}\n` +
-                         `*Teléfono:* ${phone}\n` +
-                         `*Email:* ${email}\n\n` +
-                         `*Consulta:* ${message}`;
-            
+                `*Nombre:* ${name}\n` +
+                `*Teléfono:* ${phone}\n` +
+                `*Email:* ${email}\n\n` +
+                `*Consulta:* ${message}`;
+
             // Codificar para URL
             const encodedText = encodeURIComponent(text);
-            
+
             // Crear enlace y abrir
             const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodedText}`;
             window.open(whatsappUrl, '_blank');
@@ -386,4 +508,5 @@
         });
     </script>
 </body>
+
 </html>
